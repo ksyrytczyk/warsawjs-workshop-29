@@ -11,5 +11,5 @@ import { DefaultLayoutComponent } from './app-layouts/default-layout/default-lay
     ]
 })
 export class AppComponent {
-    layout = DefaultLayoutComponent;
+    public layout = DefaultLayoutComponent;
 }
