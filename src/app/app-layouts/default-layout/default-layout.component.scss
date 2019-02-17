@@ -1,0 +1,46 @@
+$sidebar-width: 200px;
+$header-height: 50px;
+
+.header {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: $header-height;
+}
+
+.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: $header-height;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+
+    .sidebar {
+        display: block;
+        min-width: $sidebar-width;
+    }
+
+    .page-container {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+}
+
+.page-container {
+    overflow-y: auto;
+
+    .page-content {
+        flex: 1 0 auto;
+    }
+
+    .footer {
+    }
+
+}
