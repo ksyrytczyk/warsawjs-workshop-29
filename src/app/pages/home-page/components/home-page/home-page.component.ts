@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 
-import { FetchListResponseBody, RequestService } from '../../../../shared/request/request.service';
+import { FetchListResponseBody, RequestService } from '../../../../shared/request-serivce/request.service';
 
 @Component({
     selector: 'app-home-page',

@@ -1,7 +1,1 @@
-<ng-container *ngIf="movieList.length > 0">
-    <ul>
-        <li *ngFor="let item of movieList">
-            {{ item.title }}
-        </li>
-    </ul>
-</ng-container>
+<app-media-list [items]="movieList"></app-media-list>

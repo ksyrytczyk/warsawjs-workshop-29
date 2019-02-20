@@ -1,0 +1,5 @@
+<ul *ngIf="items.length > 0">
+    <li *ngFor="let media of items">
+        <app-media-list-item [media]="media"></app-media-list-item>
+    </li>
+</ul>
