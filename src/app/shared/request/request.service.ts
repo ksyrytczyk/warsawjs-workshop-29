@@ -49,22 +49,22 @@ export class RequestService {
     public fetchList(page = 1): Observable<FetchListResponseBody> {
         return this.makeRequest(API_METHODS.fetchList, {
             page
-        }) as Observable<FetchListResponseBody>;
+        });
     }
 
     public fetchMovie(id: number): Observable<FetchMovieResponseBody> {
         return this.makeRequest(API_METHODS.fetchMovie, {
             id
-        }) as Observable<FetchMovieResponseBody>;
+        });
     }
 
-    private makeRequest(url, params = {}): Observable<object> {
+    private makeRequest<T>(url, params = {}): Observable<T> {
         Object.entries(params)
             .forEach(([key, value]) => {
                 url = url.replace(`:${key}`, value);
             });
 
-        return this.http.get(url);
+        return this.http.get<T>(url);
     }
 
 }
