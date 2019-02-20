@@ -1,10 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppLayoutsModule } from './app-layouts/app-layouts.module';
 import { SharedModule } from './shared/shared.module';
+
+import { NgZorroAntdModule, NZ_I18N, en_GB } from 'ng-zorro-antd';
+
+registerLocaleData(en);
 
 @NgModule({
     declarations: [
@@ -14,9 +24,16 @@ import { SharedModule } from './shared/shared.module';
         BrowserModule,
         AppRoutingModule,
         AppLayoutsModule,
-        SharedModule
+        SharedModule,
+        NgZorroAntdModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule
     ],
-    providers: [],
+    providers: [{
+        provide: NZ_I18N,
+        useValue: en_GB
+    }],
     bootstrap: [AppComponent]
 })
 export class AppModule {
