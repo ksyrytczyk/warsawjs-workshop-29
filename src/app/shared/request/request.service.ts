@@ -46,7 +46,7 @@ export class RequestService {
     constructor(private http: HttpClient) {
     }
 
-    public fetchList(page = 1): Observable<FetchListResponseBody> {
+    public fetchList(page = 1): Observable<Array<FetchListResponseBody>> {
         return this.makeRequest(API_METHODS.fetchList, {
             page
         });

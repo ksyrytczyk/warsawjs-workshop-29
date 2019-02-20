@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+
+import { FetchListResponseBody, RequestService } from '../../../../shared/request/request.service';
 
 @Component({
     selector: 'app-home-page',
@@ -8,12 +10,18 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-    public title = 'video-station';
+    public movieList: Array<FetchListResponseBody> = [];
 
-    constructor() {
+    constructor(private requestService: RequestService,
+                private changeDetector: ChangeDetectorRef) {
     }
 
     ngOnInit() {
+        this.requestService.fetchList()
+            .subscribe((response) => {
+                this.movieList = response;
+                this.changeDetector.detectChanges();
+            });
     }
 
 }
