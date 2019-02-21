@@ -1,5 +1,13 @@
-<ul *ngIf="items.length > 0">
-    <li *ngFor="let media of items">
-        <app-media-list-item [media]="media"></app-media-list-item>
-    </li>
-</ul>
+<nz-list
+    [nzDataSource]="items"
+    [nzRenderItem]="media"
+    [nzGrid]="{ gutter: 16, sm: 24, md: 12, lg: 8, xl: 6 }">
+>
+    <ng-template #media let-media>
+        <nz-list-item [nzContent]="nzContent">
+            <ng-template #nzContent>
+                <app-media-list-item [media]="media"></app-media-list-item>
+            </ng-template>
+        </nz-list-item>
+    </ng-template>
+</nz-list>

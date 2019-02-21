@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
 import { AppLayoutsModule } from './app-layouts/app-layouts.module';
 import { SharedModule } from './shared/shared.module';
 
-import { NgZorroAntdModule, NZ_I18N, en_GB } from 'ng-zorro-antd';
+import { NZ_I18N, en_GB } from 'ng-zorro-antd';
 
 registerLocaleData(en);
 
@@ -25,7 +25,6 @@ registerLocaleData(en);
         AppRoutingModule,
         AppLayoutsModule,
         SharedModule,
-        NgZorroAntdModule,
         FormsModule,
         HttpClientModule,
         BrowserAnimationsModule

@@ -14,7 +14,11 @@ export class MediaListItemComponent implements OnInit {
     constructor() {
     }
 
-    ngOnInit() {
+    public ngOnInit() {
+    }
+
+    public get genres(): string {
+        return this.media.genres.join(', ');
     }
 
 }

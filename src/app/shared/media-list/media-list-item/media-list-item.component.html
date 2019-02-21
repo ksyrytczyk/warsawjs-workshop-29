@@ -1,3 +1,27 @@
-<ng-container *ngIf="media">
-    <p>{{ media.title }}</p>
-</ng-container>
+<nz-card
+    class="media-card"
+    [nzCover]="posterTemplate"
+    [nzHoverable]="true"
+>
+
+    <nz-card-meta
+        [nzTitle]="media.title"
+        [nzDescription]="genres"
+    ></nz-card-meta>
+
+    <nz-card-meta
+        [nzDescription]="descriptionTemplate"
+    ></nz-card-meta>
+
+
+</nz-card>
+
+<ng-template #posterTemplate>
+    <div class="poster-container">
+        <img class="poster" alt="poster" [src]="media.posterSrc"/>
+    </div>
+</ng-template>
+
+<ng-template #descriptionTemplate>
+    {{ media.rating }}/10 <i nz-icon type="star"></i>
+</ng-template>
