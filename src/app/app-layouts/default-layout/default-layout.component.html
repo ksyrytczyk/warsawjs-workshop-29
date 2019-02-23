@@ -1,16 +1,30 @@
-<app-header class="header"></app-header>
-
-<div class="main">
-    <div class="sidebar">
-        <app-sidebar></app-sidebar>
-    </div>
-
-    <div class="page-container">
-        <div class="page-content">
-            <router-outlet></router-outlet>
+<nz-layout>
+    <nz-sider
+        [nzCollapsible]="true"
+        [nzCollapsed]="isCollapsed"
+        [nzCollapsedWidth]="80"
+        [nzTrigger]="null"
+        (nzCollapsedChange)="onCollapseChange($event)"
+    >
+        <div class="sider-toggler" (click)="toggleSider()">
+            <i class="icon" nz-icon [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
         </div>
-        <div class="footer">
+        <div class="menu">
+            <app-sidebar [isCollapsed]="isCollapsed"></app-sidebar>
+        </div>
+    </nz-sider>
+
+    <nz-layout>
+        <nz-header>
+            <app-header></app-header>
+        </nz-header>
+        <nz-content>
+            <div class="page-container">
+                <router-outlet></router-outlet>
+            </div>
+        </nz-content>
+        <nz-footer>
             <app-footer></app-footer>
-        </div>
-    </div>
-</div>
+        </nz-footer>
+    </nz-layout>
+</nz-layout>

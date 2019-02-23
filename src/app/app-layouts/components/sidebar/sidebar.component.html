@@ -1,3 +1,27 @@
-<p>
-    sidebar works!
-</p>
+<div
+    [ngClass]="{
+        'side-menu': true,
+        'side-menu--collapsed': isCollapsed
+    }"
+>
+    <ul nz-menu [nzMode]="'inline'" nzTheme='dark' [nzInlineCollapsed]="isCollapsed">
+        <li
+            *ngFor="let menuItem of menuItems"
+            class="menu-item"
+            nz-menu-item
+            nz-tooltip
+            nzPlacement="right"
+            [nzTitle]="isCollapsed ?  menuItem.label : ''"
+        >
+            <span title>
+                <a [routerLink]="menuItem.url">
+                    <i nz-icon type="{{ menuItem.icon }}"></i>
+                    <span>
+                        {{ menuItem.label }}
+                    </span>
+                </a>
+            </span>
+        </li>
+
+    </ul>
+</div>

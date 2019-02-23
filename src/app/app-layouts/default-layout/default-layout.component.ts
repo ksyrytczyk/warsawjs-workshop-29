@@ -1,4 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+
+import { NzSiderComponent } from 'ng-zorro-antd';
 
 @Component({
     selector: 'app-default-layout',
@@ -6,12 +8,18 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
     styleUrls: ['./default-layout.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class DefaultLayoutComponent implements OnInit {
+export class DefaultLayoutComponent {
 
-    constructor() {
+    @ViewChild(NzSiderComponent) public siderComponent: NzSiderComponent;
+
+    public isCollapsed = true;
+
+    public toggleSider() {
+        this.siderComponent.toggleCollapse();
     }
 
-    ngOnInit() {
+    public onCollapseChange(collapseState: boolean): void {
+        this.isCollapsed = collapseState;
     }
 
 }

@@ -6,6 +6,7 @@ import { DefaultLayoutComponent } from './default-layout/default-layout.componen
 import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { FooterComponent } from './components/footer/footer.component';
     ],
     imports: [
         CommonModule,
-        AppRoutingModule
+        AppRoutingModule,
+        SharedModule
     ]
 })
 export class AppLayoutsModule {
