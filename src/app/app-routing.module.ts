@@ -10,6 +10,9 @@ const routes: Routes = [
     }, {
         path: 'movies',
         loadChildren: './pages/movies-page/movies-page.module#MoviesPageModule'
+    }, {
+        path: 'search',
+        loadChildren: './pages/search-page/search-page.module#SearchPageModule'
     }
 ];
 
