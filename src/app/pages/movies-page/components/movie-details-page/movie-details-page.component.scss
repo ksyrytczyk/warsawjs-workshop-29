@@ -1,0 +1,25 @@
+.movie-details-container {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.poster-container {
+    .poster {
+        width: 200px;
+        height: auto;
+    }
+}
+
+.movie-info {
+    margin-left: 2em;
+
+    .movie-info-content {
+        display: flex;
+        flex-direction: column;
+    }
+}

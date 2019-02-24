@@ -2,6 +2,7 @@
     class="media-card"
     [nzCover]="posterTemplate"
     [nzHoverable]="true"
+    [routerLink]="['/movies', media.id]"
 >
 
     <nz-card-meta
@@ -12,8 +13,6 @@
     <nz-card-meta
         [nzDescription]="descriptionTemplate"
     ></nz-card-meta>
-
-
 </nz-card>
 
 <ng-template #posterTemplate>

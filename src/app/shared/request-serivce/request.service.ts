@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface FetchListResponseBody {
-    id: number;
+    id: string;
     title: string;
     rating: number;
     votes: number;
@@ -14,7 +14,7 @@ export interface FetchListResponseBody {
 }
 
 export interface FetchMovieResponseBody {
-    id: number;
+    id: string;
     title: string;
     budget: number;
     description: string;
@@ -46,13 +46,13 @@ export class RequestService {
     constructor(private http: HttpClient) {
     }
 
-    public fetchList(page = 1): Observable<Array<FetchListResponseBody>> {
+    public fetchList(page = '1'): Observable<Array<FetchListResponseBody>> {
         return this.makeRequest(API_METHODS.fetchList, {
             page
         });
     }
 
-    public fetchMovie(id: number): Observable<FetchMovieResponseBody> {
+    public fetchMovie(id: string): Observable<FetchMovieResponseBody> {
         return this.makeRequest(API_METHODS.fetchMovie, {
             id
         });

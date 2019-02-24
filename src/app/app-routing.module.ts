@@ -5,7 +5,11 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        loadChildren: './pages/home-page/home-page.module#HomePageModule'
+        redirectTo: 'movies'
+        // loadChildren: './pages/home-page/home-page.module#HomePageModule'
+    }, {
+        path: 'movies',
+        loadChildren: './pages/movies-page/movies-page.module#MoviesPageModule'
     }
 ];
 
